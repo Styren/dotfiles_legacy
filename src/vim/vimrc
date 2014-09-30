@@ -178,6 +178,7 @@ set wildignore+=*.o,*.obj,.git,*.rbc,*/doc/*,*/node_modules/*,*/tmp/*,*.*~,*.cla
 
 " NERDTree ignore
 let NERDTreeIgnore = ['\.o$', '\.class$']
+let NERDTreeShowLineNumbers = 1
 
 " Non blinking cursor
 set guicursor+=a:blinkon0
