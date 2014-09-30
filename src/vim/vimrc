@@ -150,6 +150,10 @@ nmap <C-l> <C-W>l
 nmap <leader>s :split<cr>
 nmap <leader>v :vsplit<cr>
 
+" spell correction commands
+nmap <leader>z 1z=
+nmap <leader>Z z=
+
 " remove buffer
 nmap <leader>r :bwipeout<cr>
 
