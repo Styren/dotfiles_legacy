@@ -82,7 +82,7 @@ run_command() {
     local cmd=$1
     local params=$(echo $2 | grep -o .)
     case $cmd in
-        build) 
+        build)
             if [[ -d $BUILD_PATH ]]; then
                 error "Target already exists"
             fi
@@ -128,7 +128,7 @@ run_command() {
 
 get_depth() {
     for ((i=0; i<$DEPTH; i++)) {
-        echo -ne " " 
+        echo -ne " "
     }
     return
 }
