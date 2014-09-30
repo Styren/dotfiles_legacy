@@ -48,7 +48,7 @@ set tags=./tags;
 >>>{ctags}
 
 syntax on
-set number
+set relativenumber
 set ruler
 set laststatus=2
 set scrolloff=2
