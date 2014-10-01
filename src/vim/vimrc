@@ -21,7 +21,7 @@ Plugin 'gmarik/Vundle.vim'
 " Plugins
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-Plugin 'tomtom/tcomment_vim'
+Plugin 'tpope/vim-commentary'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Raimondi/delimitMate'
@@ -119,8 +119,8 @@ map <leader>g <C-]>
 map <leader>b <C-T>
 >>>{ctags}
 
-" map <leader>c to tcomment
-map <leader>c :TComment<cr>
+" map <leader>c to commentary
+map <leader>c :Commentary<cr>
 
 " toggle nerdtree
 nmap <leader>d :NERDTreeToggle<cr>
