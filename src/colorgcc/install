@@ -3,5 +3,3 @@
 build() {
     build_file colorgccrc
 }
-
-$@

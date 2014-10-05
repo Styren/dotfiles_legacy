@@ -8,5 +8,3 @@ build() {
     build_file java.vim $HOME/.vim/after/ftplugin java.vim
     build_file javascript.vim $HOME/.vim/after/ftplugin javascript.vim
 }
-
-$@

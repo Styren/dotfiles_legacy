@@ -5,11 +5,9 @@ build() {
     build_file $v
     # delete git specific changes if git is disabled
     project_enabled "git"
-    delete_chunk "git" "${BUILD_PATH}/${v}" $?
+    delete_chunk "git" ${v} $?
     project_enabled "ctags"
-    delete_chunk "ctags" "${BUILD_PATH}/${v}" $?
+    delete_chunk "ctags" ${v} $?
     build_submodule ftplugin
     build_submodule colors
 }
-
-$@

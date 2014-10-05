@@ -4,8 +4,6 @@ build() {
     local v="zshrc"
     build_file $v
     project_enabled "git"
-    delete_chunk "git" "${BUILD_PATH}/${v}" $?
+    delete_chunk "git" ${v} $?
     build_file zshenv
 }
-
-$@

@@ -7,5 +7,3 @@ build() {
     delete_chunk "git" ${BUILD_PATH}/${v} $?
     build_file "inputrc"
 }
-
-$@

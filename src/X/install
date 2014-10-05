@@ -5,6 +5,5 @@ build() {
     build_file "Xresources"
     build_file "Xdefaults"
     build_file "xbindkeysrc"
+    build_file "Xmodmap"
 }
-
-$@

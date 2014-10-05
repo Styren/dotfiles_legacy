@@ -4,5 +4,3 @@ build() {
     build_file bookmarks ${HOME}/.config/dwb/default bookmarks
     build_file quickmarks ${HOME}/.config/dwb/default quickmarks
 }
-
-$@

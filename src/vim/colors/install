@@ -3,5 +3,3 @@
 build() {
     build_file byland.vim $HOME/.vim/colors byland.vim
 }
-
-$@
