@@ -3,7 +3,7 @@
 build() {
     local v="gitconfig"
     build_file $v $HOME/.config/git $v
-    build_file gitignore
+    build_file gitignore $HOME/.config/git gitignore
     project_enabled "ctags"
     local i=$?
     delete_chunk "ctags" ${v} $i
