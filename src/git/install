@@ -2,14 +2,12 @@
 
 build() {
     local v="gitconfig"
-    build_file $v
+    build_file $v $HOME/.config/git $v
     build_file gitignore
     project_enabled "ctags"
     local i=$?
-    delete_chunk "ctags" "${BUILD_PATH}/${v}" $i
+    delete_chunk "ctags" ${v} $i
     if [ ${i} -eq 0 ]; then
         build_submodule ctag-hooks
     fi
 }
-
-$@

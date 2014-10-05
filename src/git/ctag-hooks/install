@@ -1,11 +1,9 @@
 #!/bin/bash
 
 build() {
-    build_file ctags $HOME/.git/git-templates/hooks ctags
-    build_file post-checkout $HOME/.git/git-templates/hooks post-checkout
-    build_file post-commit $HOME/.git/git-templates/hooks post-commit
-    build_file post-merge $HOME/.git/git-templates/hooks post-merge
-    build_file pre-commit $HOME/.git/git-templates/hooks pre-commit
+    build_file ctags $HOME/.config/git/git-templates/hooks ctags
+    build_file post-checkout $HOME/.config/git/git-templates/hooks post-checkout
+    build_file post-commit $HOME/.config/git/git-templates/hooks post-commit
+    build_file post-merge $HOME/.config/git/git-templates/hooks post-merge
+    build_file pre-commit $HOME/.config/git/git-templates/hooks pre-commit
 }
-
-$@
