@@ -28,6 +28,6 @@
 [diff]
 	algorithm = patience
 [init]
-    templatedir = ~/.git/git-templates
+    templatedir = ~/.config/git/git-templates
 [alias]
     ctags = !.git/hooks/ctags
