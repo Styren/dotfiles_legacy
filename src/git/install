@@ -2,7 +2,7 @@
 
 build() {
     local v="gitconfig"
-    build_file $v $HOME/.config/git $v
+    build_file $v $HOME/.config/git config
     build_file gitignore $HOME/.config/git gitignore
     project_enabled "ctags"
     local i=$?
