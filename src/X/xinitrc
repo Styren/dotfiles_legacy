@@ -15,7 +15,7 @@ feh --bg-scale ~/.background.png
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 setxkbmap -option caps:super
 
-xbindkeys
+xcape -e 'Super_L=Escape'
 
 sxhkd &
 urxvt &
