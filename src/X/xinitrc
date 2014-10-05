@@ -13,7 +13,7 @@ fi
 feh --bg-scale ~/.background.png
 
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
-setxkbmap -option caps:super
+[[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
 
 xcape -e 'Super_L=Escape'
 
