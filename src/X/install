@@ -3,7 +3,6 @@
 build() {
     local p=$HOME/.config/X
     build_file "xinitrc"
-    build_file "Xdefaults"
     build_file "Xresources" $p Xresources
     build_file "xbindkeysrc" $p xbindkeysrc
     build_file "Xmodmap" $p Xmodmap
