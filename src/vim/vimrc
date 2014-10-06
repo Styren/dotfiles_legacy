@@ -117,7 +117,7 @@ nnoremap <leader>t :CtrlPTag<cr>
 <<<{ctags}
 " jump to definition
 map <leader>g <C-]>
-" go back to where you started 
+" go back to where you started
 map <leader>b <C-T>
 >>>{ctags}
 
@@ -209,7 +209,7 @@ autocmd BufRead,BufNewFile *.{md,tex,txt,info},COMMIT_EDITMSG call Spell() | set
 
 " airline settings
 let g:airline_theme='wombat'
-    
+
 let g:airline#extensions#whitespace#symbol = '!'
 let g:airline#extensions#whitespace#trailing_format = 'trailing %s'
 let g:airline#extensions#whitespace#mixed_indent_format = 'mixed-indent %s'
