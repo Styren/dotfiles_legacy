@@ -8,7 +8,9 @@ build() {
     delete_chunk "git" ${v} $?
     project_enabled "ctags"
     delete_chunk "ctags" ${v} $?
+    dot_echo "-ne" "Minifying vimrc... "
     minify-vim ${build_path}/${v}${FILE_EXT} ${build_path}/${v}${FILE_EXT}
+    echo "done"
     build_submodule ftplugin
     build_submodule colors
 }
