@@ -7,7 +7,7 @@ build() {
     project_enabled "ctags"
     local i=$?
     delete_chunk "ctags" ${v} $i
-    if [ ${i} -eq 0 ]; then
+    if [ ${i} -eq 1 ]; then
         build_submodule ctag-hooks
     fi
 }
