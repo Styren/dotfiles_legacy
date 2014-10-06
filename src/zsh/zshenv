@@ -4,6 +4,7 @@ export LC_CTYPE=$LANG
 export SHELL=$(which zsh)
 export PATH=$HOME/{bin,scripts}:$PATH
 export XDG_CONFIG_HOME=$HOME/.config
+export LESSHISTFILE='-'
 
 # less timeout when changing modes in vi-mode
 export KEYTIMEOUT=1
