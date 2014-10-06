@@ -2,7 +2,7 @@
 
 build() {
     local v="vimrc"
-    build_file $v $HOME/.vim vimrc
+    build_file $v $HOME/.config/vim vimrc
     # delete git specific changes if git is disabled
     project_enabled "git"
     delete_chunk "git" ${v} $?

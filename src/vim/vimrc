@@ -1,6 +1,13 @@
 " don't sacrifice anything for vi compatibility
 set nocompatible
 
+" Environment
+set directory=$XDG_CACHE_HOME/vim,~/,/tmp
+set backupdir=$XDG_CACHE_HOME/vim,~/,/tmp
+set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
+set runtimepath=$XDG_CONFIG_HOME/vim,$XDG_CONFIG_HOME/vim/after,$VIM,$VIMRUNTIME
+let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc"
+
 " allow us to change unsaved buffers
 set hidden
 
@@ -12,7 +19,7 @@ set t_Co=256
 
 " vundle
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.config/vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Let Vundle manage itself
@@ -23,7 +30,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-commentary'
 Plugin 'bling/vim-airline'
-Plugin 'tpope/vim-fugitive'
 Plugin 'Raimondi/delimitMate'
 Plugin 'bling/vim-bufferline'
 Plugin 'kien/ctrlp.vim'
