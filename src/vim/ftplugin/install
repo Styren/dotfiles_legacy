@@ -1,10 +1,10 @@
 #!/bin/bash
 
 build() {
-    build_file css.config/vim $HOME/.config/vim/after/ftplugin css.config/vim
-    build_file c.config/vim $HOME/.config/vim/after/ftplugin c.config/vim
-    build_file go.config/vim $HOME/.config/vim/after/ftplugin go.config/vim
-    build_file html.config/vim $HOME/.config/vim/after/ftplugin html.config/vim
-    build_file java.config/vim $HOME/.config/vim/after/ftplugin java.config/vim
-    build_file javascript.config/vim $HOME/.config/vim/after/ftplugin javascript.config/vim
+    build_file css.vim $HOME/.config/vim/after/ftplugin css.vim
+    build_file c.vim $HOME/.config/vim/after/ftplugin c.vim
+    build_file go.vim $HOME/.config/vim/after/ftplugin go.vim
+    build_file html.vim $HOME/.config/vim/after/ftplugin html.vim
+    build_file java.vim $HOME/.config/vim/after/ftplugin java.vim
+    build_file javascript.vim $HOME/.config/vim/after/ftplugin javascript.vim
 }
