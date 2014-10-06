@@ -62,8 +62,8 @@ while read line; do
         user_colour="$(echo ${user_colour} | sed 's/!/1/')"
         let curr_colour+=1
         (( $curr_colour == 6 )) && let curr_colour=0
-        text_msg=$(sed -nr 's/.*[>:] (.*)/\1/p' <<< $line)
-        text_rec=$(sed -nr 's/.*> ([a-zA-Z0-9]*):.*$/\1/p' <<< $line)
+        text_msg=$(sed -nr 's/.*[>:,\.] (.*)/\1/p' <<< $line)
+        text_rec=$(sed -nr 's/.*> ([a-zA-Z0-9]*)[:,\.].*$/\1/p' <<< $line)
         rec_colour=""
         if ! [[ -z $text_rec ]]; then
             rec_colour="${user_colours[$text_rec]}"
