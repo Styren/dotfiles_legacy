@@ -1,0 +1,67 @@
+#!/usr/bin/bash
+#
+# Read data from ii IRC client sockets
+
+declare -A user_colours
+let curr_colour=0
+colours=('\e[1;31m' '\e[1;32m' '\e[1;33m' '\e[1;34m' '\e[1;35m' '\e[1;36m')
+
+let ARG_TIME=0
+let ARG_SYSMSG=0
+
+help() {
+    cat <<EOL
+usage: iir [options] channel
+    -h              Prints this help message
+    -t              Print hours and minutes with each message
+    -T              Print full date with each message
+    -s              Show system messages
+EOL
+}
+
+while getopts ":htTs" opt; do
+    case $opt in
+        h)
+            help && exit 0
+            ;;
+        t)
+            ARG_TIME=1
+            ;;
+        T)
+            ARG_TIME=2
+            ;;
+        s)
+            ARG_SYSMSG=1
+            ;;
+        *)
+            break
+            ;;
+    esac
+done
+# get last argument, which should be the command
+shift $((OPTIND-1))
+cmd=$1
+[[ -z $cmd ]] && cmd="out"
+
+tail -f $cmd | \
+while read line; do
+    date=""
+    (( $ARG_TIME == 1 )) && date=$(echo ${line:10} | cut -c1-5)
+    (( $ARG_TIME == 2 )) && date=$(echo ${line} | cut -c1-16)
+    name=$(echo ${line:16} | sed -nr 's/^<([a-zA-Z1-9]*)>.*$/\1/p')
+    out=""
+    if [[ -z $name ]]; then
+            (( $ARG_SYSMSG == 1 )) && out="${date} $(echo ${line:16})"
+    else
+        user_colour="${user_colours[$name]}"
+        if [[ -z $user_colour ]]; then
+            user_colour="${colours[curr_colour]}"
+            user_colours+=(["$name"]="$user_colour")
+        fi
+        let curr_colour+=1
+        (( $curr_colour == 6 )) && let curr_colour=0
+        text=$(sed -nr 's/.*> (.*)/\1/p' <<< $line)
+        out="${date} $user_colour${name} \e[0;37m${text}\e[0m"
+    fi
+    ! [[ -z $out ]] && echo && echo -en $out
+done
