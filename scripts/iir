@@ -66,11 +66,11 @@ while read line; do
         if ! [[ -z $text_rec ]]; then
             rec_colour="${user_colours[$text_rec]}"
             if [[ -z $rec_colour ]]; then
-                rec_colour="${colours[curr_colour]}"
-                user_colours+=(["$name"]="$rec_colour")
+                rec_colour="\e[0;37m"
+                text_rec=$(echo $text_rec:)
+            else
+                text_rec=$(echo @$text_rec)
             fi
-            let curr_colour+=1
-            text_rec=$(echo @$text_rec)
         fi
         out="${date} $user_colour${name} ${rec_colour}${text_rec} \e[0;37m${text_msg}\e[0m"
     fi
