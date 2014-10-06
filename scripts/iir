@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 #
 # Read data from ii IRC client sockets
+clear
 
 declare -A user_colours
 let curr_colour=0
