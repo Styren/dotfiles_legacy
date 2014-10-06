@@ -72,6 +72,7 @@ alias gaf='git add'
 alias gap='git add -p'
 alias gc='git commit -e'
 alias gp='git push'
+>>>{git}
 
 # Misc aliases
 alias p='popd'
@@ -79,7 +80,6 @@ alias ls='ls --color=always'
 alias la='ls -AlhG --color=always --human-readable'
 alias pacman='pacman --color=always'
 alias some='less -R'
->>>{git}
 
 # reverse search in vi-mode
 bindkey '^R' history-incremental-search-backward
