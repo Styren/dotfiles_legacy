@@ -48,7 +48,7 @@ while read line; do
     date=""
     (( $ARG_TIME == 1 )) && date=$(echo ${line:10} | cut -c1-5)
     (( $ARG_TIME == 2 )) && date=$(echo ${line} | cut -c1-16)
-    name=$(echo ${line:16} | sed -nr 's/^<([a-zA-Z1-9]*)>.*$/\1/p')
+    name=$(echo ${line:16} | sed -nr 's/^<([a-zA-Z0-9]*)>.*$/\1/p')
     out=""
     if [[ -z $name ]]; then
             (( $ARG_SYSMSG == 1 )) && out="${date} $(echo ${line:16})"
