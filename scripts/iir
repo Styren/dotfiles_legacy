@@ -60,8 +60,19 @@ while read line; do
         fi
         let curr_colour+=1
         (( $curr_colour == 6 )) && let curr_colour=0
-        text=$(sed -nr 's/.*> (.*)/\1/p' <<< $line)
-        out="${date} $user_colour${name} \e[0;37m${text}\e[0m"
+        text_msg=$(sed -nr 's/.*[>:] (.*)/\1/p' <<< $line)
+        text_rec=$(sed -nr 's/.*> ([a-zA-Z0-9]*):.*$/\1/p' <<< $line)
+        rec_colour=""
+        if ! [[ -z $text_rec ]]; then
+            rec_colour="${user_colours[$text_rec]}"
+            if [[ -z $rec_colour ]]; then
+                rec_colour="${colours[curr_colour]}"
+                user_colours+=(["$name"]="$rec_colour")
+            fi
+            let curr_colour+=1
+            text_rec=$(echo @$text_rec)
+        fi
+        out="${date} $user_colour${name} ${rec_colour}${text_rec} \e[0;37m${text_msg}\e[0m"
     fi
     ! [[ -z $out ]] && echo && echo -en $out
 done
