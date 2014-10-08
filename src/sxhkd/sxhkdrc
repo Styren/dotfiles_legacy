@@ -88,7 +88,7 @@ super + Return
 #     dmenu_run
 
 super + b
-    dwb
+    luakit
 
 super + v
     vlc
