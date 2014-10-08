@@ -20,7 +20,7 @@ set t_Co=256
 " vundle
 filetype off
 set rtp+=~/.config/vim/bundle/Vundle.vim
-call vundle#begin()
+call vundle#begin('$HOME/.config/vim/bundle')
 
 " Let Vundle manage itself
 Plugin 'gmarik/Vundle.vim'
