@@ -5,4 +5,10 @@ build() {
     for f in *.lua; do
         build_file $f $path $f
     done
+    cp luakit-adblock/adblock.lua .
+    cp luakit-adblock/adblock_chrome.lua .
+    build_file adblock.lua $path adblock.lua
+    build_file adblock_chrome.lua $path adblock_chrome.lua
+    rm adblock.lua adblock_chrome.lua
+    build_file adblock_list.txt $path/adblock adblock_list.txt
 }
