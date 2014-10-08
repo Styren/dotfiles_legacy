@@ -12,6 +12,6 @@ build() {
     rm adblock.lua adblock_chrome.lua
     dot_echo "Downloading adblock filterlist\n"
     curl -O --progress-bar "https://easylist-downloads.adblockplus.org/easylist.txt"
-    build_file easylist.txt $path/adblock easylist.txt
+    build_file easylist.txt $HOME/.local/share/luakit easylist.txt
     rm easylist.txt
 }
