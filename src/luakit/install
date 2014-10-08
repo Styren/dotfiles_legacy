@@ -1,0 +1,8 @@
+#!/bin/bash
+
+build() {
+    path="$HOME/.config/luakit"
+    for f in *.lua; do
+        build_file $f $path $f
+    done
+}
