@@ -59,7 +59,7 @@ require "follow"
 -- Load adblock
 -- ("$XDG_CONFIG_HOME/luakit/binds.lua" or "/etc/xdg/luakit/binds.lua")
 require "adblock"
-require "adblock-chrome"
+require "adblock_chrome"
 
 ----------------------------------
 -- Optional user script loading --
