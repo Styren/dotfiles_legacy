@@ -261,10 +261,6 @@ add_binds("normal", {
             w:zoom_set(m.count/100, b == "zZ")
         end, {count=100}),
 
-    -- Fullscreen
-    key({}, "F11", "Toggle fullscreen mode.",
-        function (w) w.win.fullscreen = not w.win.fullscreen end),
-
     -- Clipboard
     key({}, "p", [[Open a URL based on the current primary selection contents
         in the current tab.]],
