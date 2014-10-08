@@ -52,6 +52,10 @@ require "modes"
 -- ("$XDG_CONFIG_HOME/luakit/binds.lua" or "/etc/xdg/luakit/binds.lua")
 require "binds"
 
+-- Load users keybindings
+-- ("$XDG_CONFIG_HOME/luakit/binds.lua" or "/etc/xdg/luakit/binds.lua")
+require "follow"
+
 ----------------------------------
 -- Optional user script loading --
 ----------------------------------
