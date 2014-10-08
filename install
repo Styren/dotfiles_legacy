@@ -3,4 +3,4 @@ build_path="build"
 source_path="src"
 config_file="config.mk"
 
-projects=('vim' 'git' 'zsh' 'bash' 'bspwm' 'i3' 'colorgcc' 'ctags' 'dwb' 'sxhkd' 'tmux' 'vlc' 'X' 'zathura')
+projects=('vim' 'git' 'zsh' 'bash' 'bspwm' 'i3' 'colorgcc' 'ctags' 'sxhkd' 'tmux' 'vlc' 'X' 'zathura')
