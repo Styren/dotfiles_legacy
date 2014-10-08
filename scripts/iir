@@ -47,12 +47,12 @@ cmd=$1
 tail -f $cmd | \
 while read line; do
     date=""
-    (( $ARG_TIME == 1 )) && date=$(echo ${line:10} | cut -c1-5)
-    (( $ARG_TIME == 2 )) && date=$(echo ${line} | cut -c1-16)
+    (( $ARG_TIME == 1 )) && date="$(echo ${line:10} | cut -c1-5) "
+    (( $ARG_TIME == 2 )) && date="$(echo ${line} | cut -c1-16) "
     name=$(echo ${line:16} | sed -nr 's/^<([a-zA-Z0-9]*)>.*$/\1/p')
     out=""
     if [[ -z $name ]]; then
-            (( $ARG_SYSMSG == 1 )) && out="${date} $(echo ${line:16})"
+            (( $ARG_SYSMSG == 1 )) && echo && echo -ne "${date} $(echo ${line:16})"
     else
         user_colour="${user_colours[$name]}"
         if [[ -z $user_colour ]]; then
@@ -77,5 +77,4 @@ while read line; do
         fi
         out="${date} $user_colour${name} ${rec_colour}${text_rec}\e[0;37m ${text_msg}\e[0m"
     fi
-    ! [[ -z $out ]] && echo && echo -en $out
 done
