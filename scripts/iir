@@ -72,12 +72,19 @@ while read line; do
             rec_colour="${user_colours[$text_rec]}"
             if [[ -z $rec_colour ]]; then
                 rec_colour="\e[0;37m"
-                text_rec=$(echo $text_rec:)
+                text_rec=$(echo "$rec_colour$text_rec")
             else
                 rec_colour=$(echo $rec_colour | sed 's/!/4/')
-                text_rec=$(echo @$text_rec)
+                text_rec=$(echo "$rec_colour@$text_rec")
             fi
         fi
-        out="${date} $user_colour${name} ${rec_colour}${text_rec}\e[0;37m ${text_msg}\e[0m"
+        (( ${#name} > 12 )) && name="$(echo $name | cut -c1-10)..."
+        let name_size=13-${#name}
+        tab=""
+        for ((i=0; i<$name_size; i++)) {
+            tab+=$(echo -ne " ")
+        }
+        echo
+        echo -en "${date}$user_colour${name}${tab}${text_rec}\e[0;37m${text_msg}\e[0m"
     fi
 done
