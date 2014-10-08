@@ -1,0 +1,3 @@
+[submodule "src/luakit/luakit-adblock"]
+	path = src/luakit/luakit-adblock
+	url = https://github.com/Plaque-fcc/luakit-adblock/
