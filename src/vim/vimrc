@@ -214,8 +214,8 @@ autocmd BufRead,BufNewFile *.{md,tex,txt,info},COMMIT_EDITMSG call Spell() | set
 let g:airline_theme='wombat'
 
 let g:airline#extensions#whitespace#symbol = '!'
-let g:airline#extensions#whitespace#trailing_format = 'trailing %s'
-let g:airline#extensions#whitespace#mixed_indent_format = 'mixed-indent %s'
+let g:airline#extensions#whitespace#trailing_format = '%s'
+let g:airline#extensions#whitespace#mixed_indent_format = '~ %s'
 
 let g:airline_left_sep=""
 let g:airline_right_sep=""
