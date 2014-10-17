@@ -26,7 +26,7 @@ call vundle#begin('$HOME/.config/vim/bundle')
 Plugin 'gmarik/Vundle.vim'
 
 " Plugins
-Plugin 'scrooloose/nerdtree'
+Plugin 'jeetsukumaran/vim-filebeagle'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-commentary'
 Plugin 'bling/vim-airline'
@@ -127,12 +127,6 @@ map <leader>b <C-T>
 " map <leader>c to commentary
 map <leader>c :Commentary<cr>
 
-" toggle nerdtree
-nmap <leader>d :NERDTreeToggle<cr>
-
-" toggle nerdtree with the cursor positioned at the current file
-nmap <leader>D :NERDTreeFind<cr>
-
 " Show buffers
 nmap Å :buffers<cr>:buffer<Space>
 
@@ -180,10 +174,6 @@ au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru} set ft=ruby
 
 " Global ignore
 set wildignore+=*.o,*.obj,.git,*.rbc,*/doc/*,*/node_modules/*,*/tmp/*,*.*~,*.class
-
-" NERDTree ignore
-let NERDTreeIgnore = ['\.o$', '\.class$']
-let NERDTreeShowLineNumbers = 1
 
 " Non blinking cursor
 set guicursor+=a:blinkon0
