@@ -32,7 +32,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'bling/vim-airline'
 Plugin 'Raimondi/delimitMate'
 Plugin 'bling/vim-bufferline'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 <<<{git}
 Plugin 'airblade/vim-gitgutter'
 >>>{git}
