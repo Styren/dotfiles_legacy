@@ -1,6 +1,6 @@
 HISTFILE="$HOME/.cache/zsh/histfile"
-HISTSIZE=1024
-SAVEHIST=1024
+HISTSIZE=16384
+SAVEHIST=16384
 
 # write - don't overwride so multiple sessions can share history
 setopt APPEND_HISTORY
