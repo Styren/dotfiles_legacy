@@ -30,9 +30,6 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
 export EDITOR="vim"
 export VISUAL="vim"
 
-# automatically change directory if possible (cd foo -> foo)
-setopt AUTO_CD
-
 # use pushd instead of cd
 setopt AUTO_PUSHD
 
