@@ -30,6 +30,9 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
 export EDITOR="vim"
 export VISUAL="vim"
 
+# no goddamn beep
+setopt NO_BEEP
+
 # use pushd instead of cd
 setopt AUTO_PUSHD
 
