@@ -99,6 +99,9 @@ alias la='ls -FlAhG --color=always'
 alias pacman='pacman --color=always'
 alias some='less -R'
 
+# Do alias substitution after sudo with this dirty trick
+alias sudo='sudo '
+
 # reverse search in vi-mode
 bindkey '^R' history-incremental-search-backward
 # reverse pattern search in vi-mode
