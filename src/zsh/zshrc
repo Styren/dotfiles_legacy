@@ -89,6 +89,7 @@ alias gaf='git add'
 alias gap='git add -p'
 alias gc='git commit -e'
 alias gp='git push'
+alias gpl='git pull'
 >>>{git}
 
 # Misc aliases
