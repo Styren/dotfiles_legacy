@@ -12,9 +12,6 @@ super + w
 super + t
     bspc desktop -l next
 
-#super + b
-#    bspc desktop -B
-
 super + f
     bspc window -t fullscreen
 
@@ -47,35 +44,26 @@ super + {comma,period}
 super + bracket{left,right}
     bspc desktop -f {prev,next}
 
-super + alt + {h,j,k,l}
+# set presel
+super + ctrl + {h,j,k,l}
     bspc window -p {left,down,up,right}
 
+# clear presel
 super + alt + {_,shift + }space
     bspc {window -p cancel,desktop -c}
 
-super + ctrl + {h,j,k,l}
-    bspc window -e {left,down,up,right} push
+super + alt + {h,j,k,l}
+    bspc window -e {left,down,up,right} -32
+    # bspc window -e {left,down,up,right} push
 
-super + ctrl + shift + {h,j,k,l}
-    bspc window -e {right,up,down,left} pull
+# super + ctrl + shift + {h,j,k,l}
+#     bspc window -e {right,up,down,left} pull
 
 super + ctrl + {1-9}
     bspc window -r 0.{1-9}
 
 super + {_,alt + }{1-9,0}
     bspc {desktop -f,window -d} ^{1-9,10}
-
-#~button1
-#    bspc pointer -g focus
-#
-#super + button{1-3}
-#    bspc pointer -g {move,resize_side,resize_corner}
-#
-#super + !button{1-3}
-#    bspc pointer -t %i %i
-#
-#super + @button{1-3}
-#    bspc pointer -u
 
 #
 # wm independent hotkeys
