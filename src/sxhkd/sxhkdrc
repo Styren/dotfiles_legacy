@@ -49,7 +49,7 @@ super + ctrl + {h,j,k,l}
     bspc window -p {left,down,up,right}
 
 # clear presel
-super + alt + {_,shift + }space
+super + ctrl + {_,shift + }space
     bspc {window -p cancel,desktop -c}
 
 super + alt + {h,j,k,l}
