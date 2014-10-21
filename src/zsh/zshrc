@@ -45,9 +45,26 @@ setopt MENU_COMPLETE
 # glob settings
 setopt GLOB_COMPLETE
 
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' actionformats \
+        ' %b|%a '
+zstyle ':vcs_info:*' formats       \
+        ' %b '
+zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
+
+zstyle ':vcs_info:*' enable git cvs svn
+
+# or use pre_cmd, see man zshcontrib
+vcs_info_wrapper() {
+  vcs_info
+  if [ -n "$vcs_info_msg_0_" ]; then
+      echo "%{$bg[yellow]%}%{$fg[black]%}${vcs_info_msg_0_}%{$reset_color%}$del"
+    fi
+}
+
 # Insert- and normal mode prompts
-vi_norm_mode=$'%{$fg[black]%}%{$bg[yellow]%} N %{$fg[white]%}%{$bg[black]%} %1~ %{$reset_color%}%{$fg[black]%} %{$reset_color%}'
-vi_ins_mode=$'%{$fg[black]%}%{$bg[cyan]%} I %{$fg[white]%}%{$bg[black]%} %1~ %{$reset_color%}%{$fg[black]%} %{$reset_color%}'
+vi_norm_mode=$'%{$fg[black]%}%{$bg[yellow]%} N $(vcs_info_wrapper)%{$fg[white]%}%{$bg[black]%} %1~ %{$reset_color%}%{$fg[black]%} %{$reset_color%}'
+vi_ins_mode=$'%{$fg[black]%}%{$bg[cyan]%} I $(vcs_info_wrapper)%{$fg[white]%}%{$bg[black]%} %1~ %{$reset_color%}%{$fg[black]%} %{$reset_color%}'
 
 function zle-keymap-select {
   PROMPT="${${KEYMAP/vicmd/${vi_norm_mode}}/(main|viins)/${vi_ins_mode}}"
