@@ -96,7 +96,6 @@ alias gpl='git pull'
 alias p='popd'
 alias ls='ls --color=always'
 alias la='ls -FlAhG --color=always'
-alias pacman='pacman --color=always'
 alias some='less -R'
 
 # Do alias substitution after sudo with this dirty trick
