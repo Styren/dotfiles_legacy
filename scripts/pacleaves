@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# List all pacman packages that nothing depends on
+comm -23 <(pacman -Qqt | sort) <(echo $ignorepkg | tr ' ' '\n' | cat <(pacman -Sqg $ignoregrp) - | sort -u)
