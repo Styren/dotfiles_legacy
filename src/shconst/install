@@ -1,0 +1,9 @@
+#!/bin/bash
+
+build() {
+    local v="shaliases"
+    build_file $v $HOME/.config/shconst shaliases
+    project_enabled "git"
+    delete_chunk "git" ${v} $?
+    build_file shenv $HOME/.config/shconst shenv
+}

@@ -3,7 +3,8 @@
 build() {
     local v="bashrc"
     build_file $v
-    project_enabled "git"
-    delete_chunk "git" ${BUILD_PATH}/${v} $?
+    project_enabled "shconst"
+    delete_chunk "shconst" ${v} $?
     build_file "inputrc"
+    build_file "profile"
 }

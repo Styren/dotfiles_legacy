@@ -79,27 +79,10 @@ zle -N zle-line-finish
 
 export PROMPT=$vi_ins_mode
 
-<<<{git}
-# Git aliases
-alias gs='git status -s'
-alias gd='git diff'
-alias gds='git diff --cached'
-alias ga='git add -i'
-alias gaf='git add'
-alias gap='git add -p'
-alias gc='git commit -e'
-alias gp='git push'
-alias gpl='git pull'
->>>{git}
-
-# Misc aliases
-alias p='popd'
-alias ls='ls --color=always'
-alias la='ls -FlAhG --color=always'
-alias some='less -R'
-
-# Do alias substitution after sudo with this dirty trick
-alias sudo='sudo '
+<<<{shconst}
+source $HOME/.config/shconst/shaliases
+source $HOME/.config/shconst/shenv
+>>>{shconst}
 
 # reverse search in vi-mode
 bindkey '^R' history-incremental-search-backward

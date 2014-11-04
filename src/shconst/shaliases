@@ -1,0 +1,27 @@
+<<<{git}
+# Git aliases
+alias gs='git status -s'
+alias gd='git diff'
+alias gds='git diff --cached'
+alias ga='git add -i'
+alias gaf='git add'
+alias gap='git add -p'
+alias gc='git commit -e'
+alias gp='git push'
+alias gpl='git pull'
+>>>{git}
+
+# Package manager aliases
+alias pyu='pacman -Syyu'
+alias psp='pacman -S'
+alias prp='pacman -Rsn'
+alias pqp='pacman -Qi'
+
+# Misc aliases
+alias p='popd'
+alias ls='ls --color=always'
+alias la='ls -FlAhG --color=always'
+alias some='less -R'
+
+# Do alias substitution after sudo with this dirty trick
+alias sudo='sudo '
