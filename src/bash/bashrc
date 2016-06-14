@@ -1,6 +1,19 @@
 #
-# ~/.bash_profile
+# ~/.bashrc
 #
+
+export CLICOLOR=1
+export SHELL=$(which bash)
+export PATH=$HOME/{bin,scripts}:$PATH
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+export LESSHISTFILE='-'
+
+# Set vimrc's location and source it on vim startup
+export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
+
+# less timeout when changing modes in vi-mode
+export KEYTIMEOUT=1
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -14,6 +27,6 @@ source $HOME/.config/shconst/shenv
 bind -f ~/.inputrc
 
 # Environmental variables predef
-PS1='\e[40m \W \e[0;30m\e[0m '
+PS1='\w > '
 EDITOR=/usr/bin/vim
 VISUAL=/usr/bin/vim
